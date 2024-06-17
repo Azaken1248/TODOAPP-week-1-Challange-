@@ -1,13 +1,17 @@
-.main-page{
+.main-page {
   display: flex;
   flex-direction: row;
 }
-.task-div{
+
+.task-div {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 30%;
   background-color: #36DBE5;
 }
-.calander-div{
+
+.calendar-div {
   height: 100vh;
   width: 70%;
   background-color: #249EE3;

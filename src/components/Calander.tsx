@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
   addMonths,
   subMonths,
@@ -12,37 +11,28 @@ import {
   isSameDay,
 } from "date-fns";
 import "../styles/Calander.css";
+import { useDateContext } from "./DateContext";
 
 const Calendar: React.FC = () => {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [highlightedDates, setHighlightedDates] = useState([
+  const { selectedDate, setSelectedDate } = useDateContext();
+  const currentMonth = selectedDate;
+  const highlightedDates = [
     new Date(2024, 5, 17),
     new Date(2024, 5, 18),
     new Date(2024, 5, 19),
     new Date(2024, 5, 20),
-  ]);
-  var p = setHighlightedDates;
-  console.log(p);
-  useEffect(() => {
-    const storedDate = localStorage.getItem("selectedDate");
-    if (storedDate) {
-      setSelectedDate(new Date(storedDate));
-    }
-  }, []);
+  ];
 
   const nextMonth = () => {
-    setCurrentMonth(addMonths(currentMonth, 1));
+    setSelectedDate(addMonths(currentMonth, 1));
   };
 
   const prevMonth = () => {
-    setCurrentMonth(subMonths(currentMonth, 1));
+    setSelectedDate(subMonths(currentMonth, 1));
   };
 
   const onDateClick = (day: Date) => {
-    console.log("Selected Date:", day);
     setSelectedDate(day);
-    localStorage.setItem("selectedDate", day.toString());
   };
 
   const renderHeader = () => {

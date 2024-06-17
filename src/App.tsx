@@ -1,15 +1,20 @@
 import "./App.css";
-
 import Calendar from "./components/Calander";
+import Tasks from "./components/Tasks";
+import { DateProvider } from "./components/DateContext"; // Import DateProvider
 
 function App() {
   return (
-    <section className="main-page">
-      <div className="task-div">tasks</div>
-      <div className="calander-div">
-        <Calendar />
-      </div>
-    </section>
+    <DateProvider>
+      <section className="main-page">
+        <div className="task-div">
+          <Tasks />
+        </div>
+        <div className="calendar-div">
+          <Calendar />
+        </div>
+      </section>
+    </DateProvider>
   );
 }
 

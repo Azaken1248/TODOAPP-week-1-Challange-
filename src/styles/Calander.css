@@ -71,7 +71,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin: 0; /* Remove gap */
+    margin: 0; 
     border: 1px solid #a2a1a1;
     border-radius: 50%;
     font-family: Helvetica, sans-serif;
