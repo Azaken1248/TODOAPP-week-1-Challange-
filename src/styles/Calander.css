@@ -10,8 +10,8 @@
   .header {
     display: flex;
     justify-content: space-between;
-    padding: 0 16px;
     margin-bottom: 16px;
+    font-family: Helvetica, sans-serif;
   }
   
   .col-start {
@@ -36,7 +36,7 @@
   
   .icon:hover {
     color: #000000;
-    font-weight: 1000;
+    font-weight: 600;
   }
   
   .days {
@@ -60,6 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Helvetica, sans-serif;
   }
   
   .cell {
@@ -73,6 +74,7 @@
     margin: 0; /* Remove gap */
     border: 1px solid #a2a1a1;
     border-radius: 50%;
+    font-family: Helvetica, sans-serif;
   }
   
   .cell:hover {
