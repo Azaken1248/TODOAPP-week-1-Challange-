@@ -1,3 +1,4 @@
+import React from "react";
 import {
   addMonths,
   subMonths,
@@ -12,16 +13,13 @@ import {
 } from "date-fns";
 import "../styles/Calander.css";
 import { useDateContext } from "./DateContext";
+import { useTaskContext } from "./TaskContext";
 
 const Calendar: React.FC = () => {
   const { selectedDate, setSelectedDate } = useDateContext();
+  const { tasksData } = useTaskContext(); // Use tasksData instead of highlightedDates
+
   const currentMonth = selectedDate;
-  const highlightedDates = [
-    new Date(2024, 5, 17),
-    new Date(2024, 5, 18),
-    new Date(2024, 5, 19),
-    new Date(2024, 5, 20),
-  ];
 
   const nextMonth = () => {
     setSelectedDate(addMonths(currentMonth, 1));
@@ -89,6 +87,8 @@ const Calendar: React.FC = () => {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
         const cloneDay = day;
+        const taskDay = addDays(day, -1); // Adjust the highlight logic
+
         days.push(
           <div
             className={`col cell ${
@@ -96,7 +96,7 @@ const Calendar: React.FC = () => {
                 ? "disabled"
                 : isSameDay(day, selectedDate)
                 ? "selected"
-                : highlightedDates.some((date) => isSameDay(date, day))
+                : (tasksData[format(taskDay, "yyyy-MM-dd")] || []).length > 0
                 ? "highlight"
                 : ""
             }`}

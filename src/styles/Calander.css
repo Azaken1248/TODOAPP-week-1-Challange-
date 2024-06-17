@@ -94,6 +94,12 @@
     background-color: #F77600;
     color: white;
   }
+
+  .cell.highlight {
+    background-color: #F77600;
+    color: white;
+  }
+  
   
   .number {
     width: 100%;

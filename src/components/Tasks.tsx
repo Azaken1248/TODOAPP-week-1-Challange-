@@ -1,65 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDateContext } from "./DateContext";
+import { useTaskContext } from "./TaskContext";
 import "../styles/Tasks.css";
-
-interface TaskData {
-  [key: string]: string[];
-}
-
-const initialTasksData: TaskData = {
-  "2024-06-17": ["Complete frontend challenge", "Complete UI/UX challenge"],
-  "2024-06-18": ["Do something", "Finish personal project"],
-  "2024-06-19": ["Exam Prep"],
-};
 
 const Tasks: React.FC = () => {
   const { selectedDate } = useDateContext();
   const formattedDate = selectedDate.toISOString().split("T")[0];
+  const { tasksData, addTask, removeTask } = useTaskContext();
 
   const [newTask, setNewTask] = useState<string>("");
-  const [tasksData, setTasksData] = useState<TaskData>(initialTasksData);
-
-  useEffect(() => {
-    // Simulate fetching tasks data based on selectedDate
-    // Here you can replace this with actual fetching logic if needed
-    const fetchData = () => {
-      // Check if tasksData already has tasks for the selected date
-      if (!tasksData[formattedDate]) {
-        // If tasks for the selected date do not exist, initialize them as an empty array
-        setTasksData((prevTasksData) => ({
-          ...prevTasksData,
-          [formattedDate]: [],
-        }));
-      }
-    };
-
-    fetchData();
-  }, [formattedDate, tasksData]); // Fetch data whenever formattedDate or tasksData changes
 
   const handleAddTask = () => {
     if (newTask.trim() !== "") {
-      // Update tasksData state to include new task for selectedDate
-      setTasksData((prevTasksData) => ({
-        ...prevTasksData,
-        [formattedDate]: [...(prevTasksData[formattedDate] || []), newTask],
-      }));
-      setNewTask(""); // Clear input field
+      addTask(selectedDate, newTask);
+      setNewTask("");
     }
   };
 
-  const handleRemoveTask = (date: string, index: number) => {
-    const updatedTasks = [...tasksData[date]];
-    updatedTasks.splice(index, 1);
-    // Update tasksData state to remove task for selectedDate
-    setTasksData({
-      ...tasksData,
-      [date]: updatedTasks,
-    });
+  const handleRemoveTask = (index: number) => {
+    removeTask(selectedDate, index);
   };
 
   const tasks: string[] = tasksData[formattedDate] || [];
-  const nextDayTasks: string[] =
-    tasksData[getNextDayFormatted(selectedDate)] || [];
+  const nextDayFormatted = getNextDayFormatted(selectedDate);
+  const nextDayTasks: string[] = tasksData[nextDayFormatted] || [];
 
   return (
     <div className="tasks">
@@ -81,7 +45,7 @@ const Tasks: React.FC = () => {
                 {task}
                 <button
                   className="remove-task-button"
-                  onClick={() => handleRemoveTask(formattedDate, index)}
+                  onClick={() => handleRemoveTask(index)}
                 >
                   X
                 </button>
@@ -122,7 +86,7 @@ const Tasks: React.FC = () => {
 
 function getNextDayFormatted(date: Date): string {
   const nextDay = new Date(date);
-  nextDay.setDate(date.getDate() + 1);
+  nextDay.setDate(nextDay.getDate() + 1);
   return nextDay.toISOString().split("T")[0];
 }
 
