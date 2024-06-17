@@ -2,7 +2,7 @@ import "./App.css";
 import Calendar from "./components/Calander";
 import Tasks from "./components/Tasks";
 import { DateProvider } from "./components/DateContext";
-import { TaskProvider } from "./components/TaskContext"; // Import TaskProvider
+import { TaskProvider } from "./components/TaskContext";
 
 function App() {
   return (

@@ -17,7 +17,7 @@ import { useTaskContext } from "./TaskContext";
 
 const Calendar: React.FC = () => {
   const { selectedDate, setSelectedDate } = useDateContext();
-  const { tasksData } = useTaskContext(); // Use tasksData instead of highlightedDates
+  const { tasksData } = useTaskContext();
 
   const currentMonth = selectedDate;
 
@@ -57,7 +57,7 @@ const Calendar: React.FC = () => {
     const dateFormat = "EEEE";
     const days = [];
 
-    let startDate = startOfWeek(currentMonth, { weekStartsOn: 1 }); // Start week on Monday
+    let startDate = startOfWeek(currentMonth, { weekStartsOn: 1 });
 
     for (let i = 0; i < 7; i++) {
       days.push(
@@ -73,8 +73,8 @@ const Calendar: React.FC = () => {
   const renderCells = () => {
     const monthStart = startOfMonth(currentMonth);
     const monthEnd = endOfMonth(monthStart);
-    const startDate = startOfWeek(monthStart, { weekStartsOn: 1 }); // Start week on Monday
-    const endDate = endOfWeek(monthEnd, { weekStartsOn: 1 }); // End week on Sunday
+    const startDate = startOfWeek(monthStart, { weekStartsOn: 1 });
+    const endDate = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
     const dateFormat = "d";
     const rows = [];
@@ -87,7 +87,7 @@ const Calendar: React.FC = () => {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
         const cloneDay = day;
-        const taskDay = addDays(day, -1); // Adjust the highlight logic
+        const taskDay = addDays(day, -1);
 
         days.push(
           <div
