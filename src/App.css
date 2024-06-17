@@ -1,21 +1,48 @@
 .main-page {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 .task-div {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 30%;
   background-color: #36DBE5;
 }
 
 .calendar-div {
-  height: 100vh;
-  width: 70%;
+  flex: 1;
   background-color: #249EE3;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto; 
+}
+
+@media (max-width: 768px) {
+  .main-page {
+    flex-direction: column;
+  }
+
+  .task-div {
+    width: 100%;
+    height: auto;
+  }
+
+  .calendar-div {
+    width: 100%;
+    height: calc(100vh - var(--task-div-height)); 
+    overflow: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-div {
+    background-color: #28C3C8;
+  }
+
+  .calendar-div {
+    background-color: #1C82B3;
+  }
 }
