@@ -30,12 +30,12 @@ Here is how you can set it up
 
 - Extract the zip file on your computer at a known file path and copy that file path
 - Open command prompt or terminal and run the following commands:
-```sh
-  cd <Extracted Path>/TODOAPP-week-1-Challange-
-  cd src/servers
-  npm i express
-  node appserver.js
-```
+  ```sh
+    cd <Extracted Path>/TODOAPP-week-1-Challange-
+    cd src/servers
+    npm i express
+    node appserver.js
+  ```
 (note you may need to give special permissions so run your command prompt in admin mode and terminal in sudo mode and give max permissions)
 
 - After the server is running open the website from the link:
