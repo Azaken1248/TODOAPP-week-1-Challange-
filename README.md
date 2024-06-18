@@ -40,3 +40,4 @@ Here is how you can set it up
   <br>
    ```rohit```
 
+ Note: To run the server on your phone use an android phone with the termux app and execute the server from there
