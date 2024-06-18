@@ -49,6 +49,7 @@ function App() {
         const tasks = await response.json();
         // Assuming you have a setTasksData function in your TaskContext to update tasks
         // setTasksData(tasks);
+        console.log(tasks);
       } else {
         console.error("Failed to fetch tasks");
       }
