@@ -18,14 +18,24 @@ Here is how you can set it up
   <br>
   [Install Node JS](https://nodejs.org/en/download/package-manager)
   <br> 
-- Download the server zip file:
+- Clone or download this repository:
+  ```sh
+  git clone https://github.com/Azaken1248/TODOAPP-week-1-Challange-.git
+  ```
   <br>
-  [servers.zip](https://www.mediafire.com/file/ugubymfcpekbgei/servers.zip/file)
+  Or
   <br>
+  
+  [TODOApp.zip](https://github.com/Azaken1248/TODOAPP-week-1-Challange-/archive/refs/heads/main.zip)
+
+  <br>
+
 - Extract the zip file on your computer at a known file path and copy that file path
 - Open command prompt or terminal and run the following commands:
-```shell
-  cd <Extracted File Path>
+```sh
+  cd <Extracted Path>/TODOAPP-week-1-Challange-
+  cd src/servers
+  npm i express
   node appserver.js
 ```
 (note you may need to give special permissions so run your command prompt in admin mode and terminal in sudo mode and give max permissions)
