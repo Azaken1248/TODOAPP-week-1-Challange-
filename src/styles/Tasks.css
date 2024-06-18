@@ -46,16 +46,19 @@
     font-family: Roboto, sans-serif;
     font-size: 144px;
     color: white;
+    font-weight: 500;
 }
 .month{
     font-family: Roboto, sans-serif;
     font-size: 48px;
     color: white;
+    font-weight: 100;
 } 
 .year{
     font-family: Roboto, sans-serif;
     font-size: 48px;
     color: white;
+    font-weight: 100;
 }
 .mm-yyyy {
     margin-top: 30px;
@@ -127,7 +130,10 @@
 
 .add-task{
     display: flex;
-    margin: 4rem;
+    margin-top: 3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 1rem;
     gap: 10px;
 }
 
@@ -166,6 +172,57 @@
     font-weight: 500;
     font-size: 2rem;
 }
+
+
+.save-button{
+    background-color: #249EE3;
+    border: 2px solid #9AEDF2;
+    border-radius: 15px;
+    padding: 9px;
+    margin-bottom: 1rem;
+    font-family: Roboto, sans-serif;
+    font-size: larger;
+    color: white;
+    margin-left: 30%;
+}
+
+.save-button:hover{
+    background-color: #9AEDF2;
+    border-color: #249EE3;
+    color: #249EE3;
+}
+
+.saved-status{
+    display: flex;
+    justify-content: center;
+    color:#249EE3;
+    margin: 10px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.back-button{
+    border-radius: 50%;
+    background-color: #249EE3;
+    border: 2px solid #9AEDF2;
+    padding: 9px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: Roboto, sans-serif;
+    font-weight: 800;
+    font-size: larger;
+    color: white; 
+    margin-left: 10px;
+}
+
+.back-button:hover{
+    background-color: #9AEDF2;
+    border-color: #249EE3;
+    color: #249EE3;
+}
+
+
 
 @media (max-width: 600px) {
     .header {

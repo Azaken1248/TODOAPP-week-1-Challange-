@@ -27,12 +27,7 @@ interface TaskProviderProps {
 }
 
 export const TaskProvider: React.FC<TaskProviderProps> = ({ children }) => {
-  const [tasksData, setTasksData] = useState<TaskData>({
-    "2024-06-17": ["Complete frontend Challange", "Complete UI/UX challange"],
-    "2024-06-18": ["Do something", "Finish personal project"],
-    "2024-06-19": ["Exam Prep"],
-    "2024-06-20": ["Internship Project"],
-  });
+  const [tasksData, setTasksData] = useState<TaskData>({});
 
   const addTask = (date: Date, task: string) => {
     const formattedDate = date.toISOString().split("T")[0];
