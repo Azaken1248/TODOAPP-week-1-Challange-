@@ -25,9 +25,7 @@ Here is how you can set it up
   Or
   <br>
   [TODOApp.zip](https://github.com/Azaken1248/TODOAPP-week-1-Challange-/archive/refs/heads/main.zip)
-
   <br>
-
 - Extract the zip file on your computer at a known file path and copy that file path
 - Open command prompt or terminal and run the following commands:
   ```sh
