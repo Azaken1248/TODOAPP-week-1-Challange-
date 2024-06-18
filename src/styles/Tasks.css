@@ -1,3 +1,41 @@
+/* For WebKit (Chrome, Safari, Edge) */
+
+/* Track */
+::-webkit-scrollbar {
+    width: 6px; /* Adjust width as needed */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #249EE3;
+    border-radius: 3px; /* Adjust border-radius for rounded edges */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #9AEDF2;
+  }
+  
+  /* For Firefox */
+  
+  /* Track */
+  * {
+    scrollbar-width: thin; /* Creates a thin scrollbar */
+    scrollbar-color: #249EE3 #9AEDF2; /* Sets scrollbar color */
+  }
+  
+  /* Handle (only supported in Firefox) */
+  *::-webkit-scrollbar-thumb {
+    background-color: #249EE3; /* Fallback color for WebKit browsers */
+    border-radius: 3px; /* Adjust border-radius for rounded edges */
+  }
+  
+  /* Handle on hover (only supported in Firefox) */
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #9AEDF2; /* Fallback color for WebKit browsers */
+  }
+  
+
 .header {
     display: flex;
     justify-content: flex-end;
@@ -5,22 +43,24 @@
 }
  
 .day{
-    font-family: Helvetica, sans-serif;
-    font-size: 80px;
+    font-family: Roboto, sans-serif;
+    font-size: 144px;
     color: white;
 }
 .month{
-    font-family: Helvetica, sans-serif;
-    font-size: 30px;
+    font-family: Roboto, sans-serif;
+    font-size: 48px;
     color: white;
 } 
 .year{
-    font-family: Helvetica, sans-serif;
-    font-size: 30px;
+    font-family: Roboto, sans-serif;
+    font-size: 48px;
     color: white;
 }
 .mm-yyyy {
-    margin-top: 12px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -28,12 +68,12 @@
 }
 
 .titles{
-    font-family: Helvetica, sans-serif;
+    font-family: Roboto, sans-serif;
     margin-left: 1rem;
     margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-size: 20px;
-    font-weight: bold;
+    margin-top: 4rem;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .deadlines-content{
@@ -41,22 +81,29 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-height: 20vh;
+    overflow-y: auto;
 }
 .upcoming-content{
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-height: 17vh;
+    overflow-y: auto;
 }
 
 .task{
     background-color: #9AEDF2;
-    width: 15rem;
+    width: 25rem;
     padding: 8px;
     position: relative;
     margin-bottom: 8px;
-    color: #3b3b3b;
+    color: #676767;
     border-radius: 20px;
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
 }
 
 .remove-task-button {
@@ -86,7 +133,7 @@
 
 .add-task input{
     background-color: #9AEDF2;
-    font-family: Helvetica, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 15px;
     border: 2px solid #249EE3;
     border-radius: 20px;
@@ -101,7 +148,7 @@
     padding: 9px;
     padding-left: 15px;
     padding-right: 15px;
-    font-family: Helvetica, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 800;
     font-size: larger;
     color: white;
@@ -111,4 +158,129 @@
     background-color: #9AEDF2;
     border-color: #249EE3;
     color: #249EE3;
+}
+
+.no-tasks{
+    color:#249EE3;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+     
+    .day{
+        font-family: Roboto, sans-serif;
+        font-size: 80px;
+        color: white;
+    }
+    .month{
+        font-family: Roboto, sans-serif;
+        font-size: 30px;
+        color: white;
+    } 
+    .year{
+        font-family: Roboto, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+    .mm-yyyy {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 3rem; 
+    }
+    
+    .titles{
+        font-family: Roboto, sans-serif;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .deadlines-content{
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .upcoming-content{
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .task{
+        background-color: #9AEDF2;
+        width: 15rem;
+        padding: 8px;
+        position: relative;
+        margin-bottom: 8px;
+        color: #3b3b3b;
+        border-radius: 20px;
+        font-size: 18.59px;
+    }
+    
+    .remove-task-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #dc3545; 
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-top-right-radius: 15px;
+        padding: 5px 10px;
+        font-size: 12px;
+        cursor: pointer;
+        display: none;  
+      }
+      
+    .task:hover .remove-task-button {
+        display: block; 
+    }
+    
+    .add-task{
+        display: flex;
+        margin: 4rem;
+        gap: 10px;
+    }
+    
+    .add-task input{
+        background-color: #9AEDF2;
+        font-family: Roboto, sans-serif;
+        font-size: 15px;
+        border: 2px solid #249EE3;
+        border-radius: 20px;
+        width: 30vw;
+        padding: 10px;
+    }
+    
+    .add-task button{
+        border-radius: 50%;
+        background-color: #249EE3;
+        border: 2px solid #9AEDF2;
+        padding: 9px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: Roboto, sans-serif;
+        font-weight: 800;
+        font-size: larger;
+        color: white;
+    }
+    
+    .add-task button:hover{
+        background-color: #9AEDF2;
+        border-color: #249EE3;
+        color: #249EE3;
+    }
 }

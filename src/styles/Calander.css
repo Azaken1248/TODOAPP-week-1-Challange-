@@ -1,68 +1,192 @@
+@font-face {
+  font-family: "inter";
+  src: url("../assets/fonts/inter.ttf");
+}
+
 .calendar {
+  width: 78%;
+  min-height: 90%;
+  margin: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-family: "inter", sans-serif;
+}
+
+.col-start {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.col-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  cursor: pointer;
+  user-select: none;
+  color: #c7c5c5;
+  padding: 0 10px;
+  font-size: 40px;
+}
+
+.icon:hover {
+  color: #000000;
+  font-weight: 600;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+}
+
+.col-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-family: "inter", sans-serif;
+}
+
+.cell {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  border: 2px solid #D5D4DF;
+  border-radius: 50%;
+  font-size: 28px;
+  font-family: "inter", sans-serif;
+}
+
+.cell:hover {
+  background: #249EE3;
+}
+
+.disabled {
+  color: #A8A8A8;
+  background-color: #F2F3F7;
+}
+
+.selected {
+  background-color: #5ED3EC;
+  color: white;
+}
+
+.highlight {
+  background-color: #F77600;
+  color: white;
+}
+
+.cell.highlight {
+  background-color: #F77600;
+  color: white;
+}
+
+.number {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+
+@media (max-width: 600px) {
+  .calendar {
     width: 350px;
-    margin: 20px;
+    min-height: 70%;
+    margin: 50px;
     background: white;
     border-radius: 8px;
     padding: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   .header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 16px;
-    font-family: Helvetica, sans-serif;
+    font-family: "inter", sans-serif;
   }
-  
+
   .col-start {
     flex-grow: 1;
     text-align: left;
-    font-size: 20px;
+    font-size: 16.73px;
     font-weight: bold;
   }
-  
+
   .col-end {
     display: flex;
     justify-content: flex-end;
   }
-  
+
   .icon {
     cursor: pointer;
     user-select: none;
     color: #c7c5c5;
     padding: 0 10px;
-    font-size: 25px;
+    font-size: 16.73px;
   }
-  
+
   .icon:hover {
     color: #000000;
     font-weight: 600;
   }
-  
+
   .days {
     display: flex;
     justify-content: space-between;
     padding-bottom: 16px;
     font-weight: bold;
   }
-  
+
   .row {
     display: flex;
     justify-content: space-between;
   }
-  
+
   .col {
     flex: 1;
     text-align: center;
   }
-  
+
   .col-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-family: "inter", sans-serif;
   }
-  
+
   .cell {
     min-width: 40px;
     min-height: 40px;
@@ -71,25 +195,26 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin: 0; 
+    margin: 0;
     border: 1px solid #a2a1a1;
     border-radius: 50%;
-    font-family: Helvetica, sans-serif;
+    font-size: 9.76px;
+    font-family: "inter", sans-serif;
   }
-  
+
   .cell:hover {
-    background: #f0f0f0;
+    background: #249EE3;
   }
-  
+
   .disabled {
     color: #d0d0d0;
   }
-  
+
   .selected {
     background-color: #5ED3EC;
     color: white;
   }
-  
+
   .highlight {
     background-color: #F77600;
     color: white;
@@ -99,8 +224,7 @@
     background-color: #F77600;
     color: white;
   }
-  
-  
+
   .number {
     width: 100%;
     height: 100%;
@@ -109,4 +233,4 @@
     justify-content: center;
     border-radius: 50%;
   }
-  
+}
