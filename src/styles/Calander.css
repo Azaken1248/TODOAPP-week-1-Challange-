@@ -119,6 +119,14 @@
 }
 
 
+@media (width: 1920px) {
+  .calendar{
+    width: 68%;
+  }
+  
+}
+
+
 @media (max-width: 600px) {
   .calendar {
     width: 350px;
