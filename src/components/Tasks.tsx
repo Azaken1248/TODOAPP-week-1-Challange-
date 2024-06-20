@@ -154,7 +154,7 @@ const Tasks: React.FC = () => {
         </div>
         <div className="button-control">
           <button className="back-button" onClick={goBack}>
-            🡨
+            ←
           </button>
           <button className="save-button" onClick={saveTasks}>
             Save
